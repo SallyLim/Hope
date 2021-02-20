@@ -6,20 +6,20 @@ public class HandMovementBehavior : MonoBehaviour
 
 {
     public Rigidbody2D rb;
-    public Vector2 acceleration = new Vector2(.002f, 0);
+    public Vector2 acceleration = new Vector2(0, .3f);
     public Vector2 currVelocity = new Vector2(0, 0);
-    public Vector2 accelerationIncrease = new Vector2(0.00001f, 0);
+    public Vector2 accelerationIncrease = new Vector2(0, .00001f);
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = new Vector2(5, 0);
+        rb.velocity = new Vector2(0, 5);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {   
         acceleration += accelerationIncrease;
-        if(rb.velocity.x >= 0)
+        if(rb.velocity.y >= 0)
         {   
             rb.velocity += acceleration;
         }
@@ -33,17 +33,34 @@ public class HandMovementBehavior : MonoBehaviour
         }
         if(col.gameObject.name == "backWall")
         {
-            rb.velocity = new Vector2(Random.Range(10, 20), Random.Range(-3, 3));
+            rb.position = new Vector2(Random.Range(-24, 24), -35);
+            rb.velocity = new Vector2(Random.Range(-20, 20), Random.Range(40, 50));
         }
-        if(col.gameObject.name == "topWall")
+        if(col.gameObject.name == "rightWall")
         {
+            if(rb.velocity.y >= 0)
+            {
+                rb.velocity = new Vector2(Random.Range(-20, -10), Random.Range(40, 80));
+            }
+            if(rb.velocity.y < 0)
+            {
+                rb.velocity = new Vector2(Random.Range(-20,-10), Random.Range(40,80));
+            }
         }
-        if (col.gameObject.name == "bottomWall")
+        if (col.gameObject.name == "leftWall")
         {
+            if(rb.velocity.y >= 0)
+            {
+                rb.velocity = new Vector2(Random.Range(5, 10), Random.Range(40, 80));
+            }
+            if(rb.velocity.y < 0)
+            {
+                rb.velocity = new Vector2(Random.Range(5,10), Random.Range(40,80));
+            }
         }
         if (col.gameObject.name == "frontWall")
         {
-            rb.velocity = new Vector2(-10, Random.Range(-5, 5));
+            rb.velocity = new Vector2(Random.Range(-20, 20), -40);
         }
         
         
@@ -51,6 +68,6 @@ public class HandMovementBehavior : MonoBehaviour
     
     void OnMouseDown()
     {
-        rb.velocity = new Vector2(-10, Random.Range(-5, 5));
+        rb.velocity = new Vector2(Random.Range(-5, 5), Random.Range(-40, -80));
     }
 }
