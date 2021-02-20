@@ -6,18 +6,19 @@ public class HandMovementBehavior : MonoBehaviour
 
 {
     public Rigidbody2D rb;
-    public Vector2 acceleration = new Vector2(.02f, 0);
+    public Vector2 acceleration = new Vector2(.002f, 0);
     public Vector2 currVelocity = new Vector2(0, 0);
+    public Vector2 accelerationIncrease = new Vector2(0.00001f, 0);
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = new Vector2(0, 0);
+        rb.velocity = new Vector2(5, 0);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {   
-        currVelocity += acceleration;
+        acceleration += accelerationIncrease;
         if(rb.velocity.x >= 0)
         {   
             rb.velocity += acceleration;
@@ -26,17 +27,30 @@ public class HandMovementBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {   
-        rb.velocity = new Vector2(0,0);
-        if(col.gameObject.tag == "backWall")
+        if (col.gameObject.name == "Clock")
         {
-            rb.velocity = new Vector2(Random.Range(-3, 3), Random.Range(5, 20));
+            Time.timeScale = 0;
+        }
+        if(col.gameObject.name == "backWall")
+        {
+            rb.velocity = new Vector2(Random.Range(10, 20), Random.Range(-3, 3));
+        }
+        if(col.gameObject.name == "topWall")
+        {
+        }
+        if (col.gameObject.name == "bottomWall")
+        {
+        }
+        if (col.gameObject.name == "frontWall")
+        {
+            rb.velocity = new Vector2(-10, Random.Range(-5, 5));
         }
         
-        Debug.Log(col);
+        
     }
     
     void OnMouseDown()
     {
-        rb.velocity = new Vector2(-20, Random.Range(-3, 3));
+        rb.velocity = new Vector2(-10, Random.Range(-5, 5));
     }
 }
