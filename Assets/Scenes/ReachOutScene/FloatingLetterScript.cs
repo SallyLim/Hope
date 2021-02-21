@@ -40,20 +40,30 @@ public class FloatingLetterScript : MonoBehaviour
         GetComponentInChildren<Text>().text = letterList[UnityEngine.Random.Range(0, letterList.Length - 1)].ToString();
         
         button = GetComponent<Button>();
-        button.onClick.AddListener(() => TextController.Instance.ClickLetter(GetComponent<Text>().text));
+        button.onClick.AddListener(() => {
+            TextController.Instance.ClickLetter(GetComponentInChildren<Text>().text);
+            Destroy(gameObject);
+        });
 
         fallValue += UnityEngine.Random.Range(-fallValueVariance / 2, fallValueVariance / 2);
         ttl += UnityEngine.Random.Range(-ttlVariance / 2, ttlVariance / 2);
+        // This is the task of our coroutine, removing the bullet in 3 seconds
+        IEnumerator removerTask = ExecuteAfterTime(ttl, () => {
+            Destroy(gameObject);
+            });
+
+        StartCoroutine(removerTask);
     }
 
-    IEnumerator SelfDestruct() {
-        yield return new WaitForSeconds(ttl);
-        GameObject.Destroy(this);
+    private IEnumerator ExecuteAfterTime(float time, Action task)
+    {
+        yield return new WaitForSeconds(time);
+        task();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x - fallValue, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y  - fallValue, transform.position.z);
     }
 }

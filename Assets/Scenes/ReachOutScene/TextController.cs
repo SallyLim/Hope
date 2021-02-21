@@ -6,7 +6,7 @@ using TMPro;
 public class TextController : MonoBehaviour
 {
     const int b = 53;
-    const float timeToFade = 0.01f;
+    const float timeToFade = 0.1f;
 
     [SerializeField] TMP_Text text;
     public static TextController Instance;
@@ -45,6 +45,9 @@ public class TextController : MonoBehaviour
         if (letter[0] == text.textInfo.characterInfo[curIndex].character) {
             SetColor(curIndex, new Color32(b, b, b, 255));
             inc();
+        }
+        else {
+            dec();
         }
 
         
