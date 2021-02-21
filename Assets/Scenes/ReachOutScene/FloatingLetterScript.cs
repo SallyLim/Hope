@@ -34,7 +34,7 @@ public class FloatingLetterScript : MonoBehaviour
     public float fallValueVariance;
     public Button button;
 
-    void Start()
+    void Awake()
     {
         GetComponentInChildren<Text>().text = letterList[UnityEngine.Random.Range(0, letterList.Length)].ToString();
         
