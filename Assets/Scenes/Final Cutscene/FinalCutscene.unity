@@ -329,7 +329,7 @@ SpriteRenderer:
   m_Size: {x: 15.000486, y: 30.999998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &341873442
@@ -492,12 +492,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
-  m_Sprite: {fileID: -5452615352512594026, guid: 4dcc2c4ff9f104b4db0a1e60642dd265, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d0218bb13a7abb44aee62590dabfde2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.002735, y: 42.280003}
+  m_Size: {x: 50.00977, y: 60.000004}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1921,12 +1921,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
-  m_Sprite: {fileID: -5452615352512594026, guid: 4dcc2c4ff9f104b4db0a1e60642dd265, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d0218bb13a7abb44aee62590dabfde2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.002735, y: 42.280003}
+  m_Size: {x: 50.00977, y: 60.000004}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2022,7 +2022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6cd9dd737dc4b8543b5427f5d6c7930f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2594d8900f99bc46877591b5ac9db98, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2212,7 +2212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1368129687
 Transform:
   m_ObjectHideFlags: 0
@@ -2448,7 +2448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b606842d835be354fabc0c14c59a337a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9152d43e4684880469adf2f9e201970d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

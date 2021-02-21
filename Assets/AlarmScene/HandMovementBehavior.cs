@@ -39,7 +39,7 @@ public class HandMovementBehavior : MonoBehaviour
         if (col.gameObject.name == "Clock")
         {   
             m_MyAudioSource.Stop();
-            SceneManager.LoadScene("handlose");
+            SceneManager.LoadScene("handscene");
         }
         if(col.gameObject.name == "backWall")
         {
