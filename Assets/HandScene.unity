@@ -647,6 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5c65e8ef296a64989a160ca165816d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MyAudioSource: {fileID: 1058000405}
 --- !u!82 &1058000405
 AudioSource:
   m_ObjectHideFlags: 0
@@ -997,6 +998,10 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0.2}
   currVelocity: {x: 0, y: 0}
   accelerationIncrease: {x: 0, y: 0.001}
+  m_MyAudioSource: {fileID: 1058000405}
+  Clock: {fileID: 1058000400}
+  rightWall: {fileID: 1220033512}
+  leftWall: {fileID: 1273293609}
 --- !u!50 &1533698054
 Rigidbody2D:
   serializedVersion: 4
