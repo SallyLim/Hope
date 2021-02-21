@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pictureController : MonoBehaviour
 {
@@ -44,9 +45,11 @@ public class pictureController : MonoBehaviour
             {
                 picture3TurningOn = true;
             }
-        
+        if (picture3Active == true)
+            {
+                SceneManager.LoadScene("afterWakingUp");
+            }
         }
-
         if (picture1TurningOn == true)
         {
             opacity1 += opacityAcceleration;
@@ -75,8 +78,8 @@ public class pictureController : MonoBehaviour
             picture3.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, opacity3);
             if (opacity3 > 0.99f)
             {
-                picture2TurningOn = false;
-                picture2Active = true;
+                picture3TurningOn = false;
+                picture3Active = true;
             }
         }
     }
