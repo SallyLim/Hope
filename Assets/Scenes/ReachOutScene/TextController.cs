@@ -9,6 +9,9 @@ public class TextController : MonoBehaviour
     const int active = 219;
     const float timeToFade = 0.1f;
 
+    public AudioClip decClip;
+    public AudioClip incClip;
+
     [SerializeField] TMP_Text text;
     public static TextController Instance;
     public int curIndex = 0;
@@ -64,6 +67,11 @@ public class TextController : MonoBehaviour
     }
 
     public void Inc() {
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().clip = incClip;
+        GetComponent<AudioSource>().Play();
+
+
         SetColor(fadeIndex, new Color32(active, active, active, 255));
         curFade = active;
         fadeIndex = curIndex;
@@ -77,8 +85,15 @@ public class TextController : MonoBehaviour
     }
 
     public void Dec() {
+
+        
         SetColor(fadeIndex, new Color32(inactive, inactive, inactive, 255));
         if (fadeIndex > -1) {
+            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().clip = decClip;
+            GetComponent<AudioSource>().Play();
+
+            
             curIndex = fadeIndex;
             fadeIndex--;
             if (fadeIndex > -1 && text.textInfo.characterInfo[fadeIndex].character == ' ') {
