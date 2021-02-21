@@ -208,7 +208,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 152
+  m_fontSize: 154.35
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ge: {fileID: 2816927328411200443, guid: 6ba0d5469563e45468b5af72130def1a, type: 3}
-  spawnInterval: 0
+  spawnInterval: 0.1
   spawnIntervalVariance: 0.5
   topRight: {fileID: 1330384282}
   bottomLeft: {fileID: 1644811362}
