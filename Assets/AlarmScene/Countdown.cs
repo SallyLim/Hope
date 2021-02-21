@@ -32,10 +32,8 @@ public class Countdown : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 timeText.text = string.Format("You Have Woken Up!!");
-                Time.timeScale = 0;
                 m_MyAudioSource.Stop();
                 SceneManager.LoadScene("handWin");
-                
             }
         }
     }

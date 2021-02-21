@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee36b753baf485409faa083ff9f2faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 15
+  timeRemaining: 1
   timerIsRunning: 1
   timeText: {fileID: 1106160118}
   m_MyAudioSource: {fileID: 1058000405}

@@ -28,6 +28,7 @@ public class Spawner : MonoBehaviour
         while(true) {
             Debug.Log("Spawning");
             yield return new WaitForSeconds(spawnInterval + Random.Range(0, spawnIntervalVariance));
+            Debug.Log("cc");
             Instantiate(ge, new Vector3(Random.Range(bottomLeft.transform.position.x, topRight.transform.position.x), 
             Random.Range(bottomLeft.transform.position.y, topRight.transform.position.y), transform.position.z), transform.rotation, transform);
         }
