@@ -48,6 +48,7 @@ public class pictureController : MonoBehaviour
         if (picture3Active == true)
             {
                 SceneManager.LoadScene("afterWakingUp");
+                MusicController.ins.setSong(1);
             }
         }
         if (picture1TurningOn == true)
