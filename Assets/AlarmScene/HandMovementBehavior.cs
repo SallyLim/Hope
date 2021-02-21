@@ -37,7 +37,7 @@ public class HandMovementBehavior : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {   
         if (col.gameObject.name == "Clock")
-        {
+        {   
             m_MyAudioSource.Stop();
             SceneManager.LoadScene("handlose");
         }
