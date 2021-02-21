@@ -36,7 +36,7 @@ public class FloatingLetterScript : MonoBehaviour
 
     void Start()
     {
-        GetComponentInChildren<Text>().text = letterList[UnityEngine.Random.Range(0, letterList.Length - 1)].ToString();
+        GetComponentInChildren<Text>().text = letterList[UnityEngine.Random.Range(0, letterList.Length)].ToString();
         
         button = GetComponent<Button>();
         button.onClick.AddListener(() => {

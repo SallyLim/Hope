@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TextController : MonoBehaviour
 {
@@ -69,6 +70,9 @@ public class TextController : MonoBehaviour
         curIndex++;
         if (text.textInfo.characterInfo[curIndex].character == ' ') {
             curIndex++;
+        } else if (text.textInfo.characterInfo[curIndex].character == '.')
+        {
+            SceneManager.LoadScene("FinalCutscene");
         }
     }
 
