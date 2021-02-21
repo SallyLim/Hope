@@ -328,8 +328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ge: {fileID: 2816927328411200443, guid: 6ba0d5469563e45468b5af72130def1a, type: 3}
-  spawnInterval: 0.1
-  spawnIntervalVariance: 0.5
+  spawnInterval: 0
+  spawnIntervalVariance: 0.4
   topRight: {fileID: 1330384282}
   bottomLeft: {fileID: 1644811362}
 --- !u!114 &566860829
@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e84d994902bcdf647adc8a2bbf7cfc66, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6eae98ff6f6e90347a556a5dbca4cd26, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
