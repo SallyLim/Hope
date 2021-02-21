@@ -7,30 +7,16 @@ public class textMovement : MonoBehaviour
     public GameObject textComponent;
     public GameObject targetText;
 
-    private float speed = 4f;
+    private float speed = 2f;
 
-    void OnEnable()
+    void FixedUpdate()
     {
-        StartCoroutine ("textCoroutine");
-    }
-
-    void OnDisable()
+    textComponent.transform.position = Vector3.MoveTowards (textComponent.transform.position, targetText.transform.position, Time.deltaTime * speed);
+    if (textComponent.transform.position == targetText.transform.position)
     {
-        StopCoroutine ("textCoroutine");
+        GameObject.Destroy(textComponent);
     }
     
-    private IEnumerator textCoroutine()
-    {
-        while(true)
-        {
-            while(Vector3.Distance(textComponent.transform.position, targetText.transform.position) > 0.1f)
-            {
-                textComponent.transform.position = Vector3.MoveTowards (textComponent.transform.position, targetText.transform.position, Time.deltaTime * speed);
-                yield return new WaitForSeconds (0.02f);
-            }
-
-            yield return new WaitForSeconds (0.5f);
-        }
     }
 
 }
