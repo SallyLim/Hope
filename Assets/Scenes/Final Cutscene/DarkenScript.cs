@@ -11,6 +11,7 @@ public class DarkenScript : MonoBehaviour
     public PostProcessProfile post;
     public float incrementValue;
     private float evValue = 0;
+    public float minEv = -100;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class DarkenScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        colorGrading.postExposure.value = evValue;
+        colorGrading.postExposure.value = Mathf.Max(evValue, minEv);
         evValue -= incrementValue;
     }
 }

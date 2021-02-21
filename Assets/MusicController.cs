@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    public MusicController ins;
+    public static MusicController ins;
 
     public List<AudioClip> songList;
 
