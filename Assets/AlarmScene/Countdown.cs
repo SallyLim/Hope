@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Countdown : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class Countdown : MonoBehaviour
                 timeText.text = string.Format("You Have Woken Up!!");
                 Time.timeScale = 0;
                 m_MyAudioSource.Stop();
+                SceneManager.LoadScene("handWin");
+                
             }
         }
     }
