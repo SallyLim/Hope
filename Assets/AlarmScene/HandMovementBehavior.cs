@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HandMovementBehavior : MonoBehaviour
 
@@ -38,7 +39,7 @@ public class HandMovementBehavior : MonoBehaviour
         if (col.gameObject.name == "Clock")
         {
             m_MyAudioSource.Stop();
-            Time.timeScale = 0;
+            SceneManager.LoadScene("handlose");
         }
         if(col.gameObject.name == "backWall")
         {
