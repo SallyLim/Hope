@@ -1,11 +1,19 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: d2594d8900f99bc46877591b5ac9db98
-=======
-guid: 6cd9dd737dc4b8543b5427f5d6c7930f
->>>>>>> 5d039ccd97787a976e3ee1c7fbf87863350f088e
+guid: 84cfdb5c548dd924c9409b0631198ff2
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -868470749621900055
+    second: ending image_0
+  - first:
+      213: 8485312405632657363
+    second: ending image_1
+  - first:
+      213: -6477443554930358364
+    second: ending image_2
+  - first:
+      213: -3163383550316103722
+    second: ending image_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -45,21 +53,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-<<<<<<< HEAD
-  spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-=======
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 237, y: 568, z: 184, w: 465}
->>>>>>> 5d039ccd97787a976e3ee1c7fbf87863350f088e
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -85,8 +85,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -123,10 +121,93 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> 5d039ccd97787a976e3ee1c7fbf87863350f088e
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ending image_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2453
+        width: 527
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec28fe547292f3f0800000000000000
+      internalID: -868470749621900055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ending image_1
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 2346
+        width: 841
+        height: 688
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d723f10da2e1c570800000000000000
+      internalID: 8485312405632657363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ending image_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1905
+        width: 517
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a78bbfd76f7b16a0800000000000000
+      internalID: -6477443554930358364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ending image_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 24
+        width: 883
+        height: 1027
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7381bdb676914d0800000000000000
+      internalID: -3163383550316103722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
