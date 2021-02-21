@@ -42,8 +42,12 @@ public class TextController : MonoBehaviour
     }
 
     public void ClickLetter(string letter) {
-        SetColor(curIndex, new Color32(b, b, b, 255));
-        inc();
+        if (letter[0] == text.textInfo.characterInfo[curIndex].character) {
+            SetColor(curIndex, new Color32(b, b, b, 255));
+            inc();
+        }
+
+        
     }
 
     public void inc() {
