@@ -6,13 +6,14 @@ public class HandMovementBehavior : MonoBehaviour
 
 {
     public Rigidbody2D rb;
-    public Vector2 acceleration = new Vector2(0, .3f);
-    public Vector2 currVelocity = new Vector2(0, 0);
-    public Vector2 accelerationIncrease = new Vector2(0, .00001f);
+    public Vector2 acceleration;
+    public Vector2 currVelocity;
+    public Vector2 accelerationIncrease;
     public AudioSource m_MyAudioSource;
     public GameObject Clock;
     public GameObject rightWall;
     public GameObject leftWall;
+    public GameObject backWall;
     
     
     // Start is called before the first frame update
@@ -41,29 +42,29 @@ public class HandMovementBehavior : MonoBehaviour
         }
         if(col.gameObject.name == "backWall")
         {
-            rb.position = new Vector2(Random.Range(leftWall.transform.position.x + 2, rightWall.transform.position.x - 2), -35);
-            rb.velocity = new Vector2(Clock.transform.position.x - rb.position.x, Random.Range(40, 50));
+            rb.position = new Vector2(Random.Range(leftWall.transform.position.x - 6, rightWall.transform.position.x + 6), backWall.transform.position.y);
+            rb.velocity = new Vector2(Clock.transform.position.x - rb.position.x, Random.Range(30,50));
         }
         if(col.gameObject.name == "rightWall")
         {
             if(rb.velocity.y >= 0)
             {
-                rb.velocity = new Vector2(Random.Range(-20, -10), Random.Range(40, 80));
+                rb.velocity = new Vector2(Clock.transform.position.x - rb.position.x, Random.Range(30,50));
             }
             if(rb.velocity.y < 0)
             {
-                rb.velocity = new Vector2(Random.Range(-20,-10), Random.Range(40,80));
+                rb.velocity = new Vector2(Clock.transform.position.x - rb.position.x, Random.Range(30,50));
             }
         }
         if (col.gameObject.name == "leftWall")
         {
             if(rb.velocity.y >= 0)
             {
-                rb.velocity = new Vector2(Random.Range(5, 10), Random.Range(40, 80));
+                rb.velocity = new Vector2(Clock.transform.position.x - rb.position.x, Random.Range(30,50));
             }
             if(rb.velocity.y < 0)
             {
-                rb.velocity = new Vector2(Random.Range(5,10), Random.Range(40,80));
+                rb.velocity = new Vector2(Clock.transform.position.x - rb.position.x, Random.Range(30,50));
             }
         }
         if (col.gameObject.name == "frontWall")
