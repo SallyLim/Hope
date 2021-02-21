@@ -3,27 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class pictureController : MonoBehaviour
+public class secondPictureController : MonoBehaviour
 {
     public GameObject picture1;
     public GameObject picture2;
-    public GameObject picture3;
     public float opacityAcceleration;
     private bool picture1Active = false;
     private bool picture2Active = false;
-    private bool picture3Active = false;
-    private bool picture1TurningOn = true;
+    private bool picture1TurningOn = false;
     private bool picture2TurningOn = false;
-    private bool picture3TurningOn = false;
     private float opacity1 = 0;
     private float opacity2 = 0;
-    private float opacity3 = 0;
     // Start is called before the first frame update
     void Start()
     {   
         picture1.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
         picture2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-        picture3.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
     }
 
     // Update is called once per frame
@@ -40,14 +35,9 @@ public class pictureController : MonoBehaviour
             {
                 picture2TurningOn = true;
             }
-        
-        if (picture3TurningOn == false & picture3Active == false & picture2Active == true & picture1Active == true)
+        if (picture2Active == true)
             {
-                picture3TurningOn = true;
-            }
-        if (picture3Active == true)
-            {
-                SceneManager.LoadScene("afterWakingUp");
+                SceneManager.LoadScene("ReachOutScene");
             }
         }
         if (picture1TurningOn == true)
@@ -69,17 +59,6 @@ public class pictureController : MonoBehaviour
             {
                 picture2TurningOn = false;
                 picture2Active = true;
-            }
-        }
-
-        if (picture3TurningOn == true)
-        {
-            opacity3 += opacityAcceleration;
-            picture3.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, opacity3);
-            if (opacity3 > 0.99f)
-            {
-                picture3TurningOn = false;
-                picture3Active = true;
             }
         }
     }
