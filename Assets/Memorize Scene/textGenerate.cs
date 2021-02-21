@@ -9,7 +9,7 @@ public class textGenerate : MonoBehaviour
         "What makes you happy?",
         "What are you most passionate about?",
         "What is your favorite place in the entire world?",
-        "How do you spend your mornings?"
+        "When have you been the most happy?"
     };
 
     // Start is called before the first frame update
