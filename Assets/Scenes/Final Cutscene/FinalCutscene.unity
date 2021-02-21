@@ -738,6 +738,7 @@ MonoBehaviour:
   colorGrading: {fileID: 0}
   post: {fileID: 11400000, guid: 4576938f1ded1e447baaeba82e3d93e5, type: 2}
   incrementValue: 0.01
+  minEv: -100
 --- !u!1 &505314983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,14 +2177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d9bfc37014f8847ac489dce7515883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent1: {fileID: 0}
-  textComponent2: {fileID: 0}
-  textComponent3: {fileID: 0}
-  textComponent4: {fileID: 0}
-  targetText1: {fileID: 1205413372}
-  minSpeed: 1
-  maxSpeed: 5
-  frame: 0
 --- !u!114 &1045211050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,6 +2739,7 @@ GameObject:
   - component: {fileID: 1509857551}
   - component: {fileID: 1509857553}
   - component: {fileID: 1509857552}
+  - component: {fileID: 1509857554}
   m_Layer: 0
   m_Name: ending image_1
   m_TagString: Untagged
@@ -2853,6 +2847,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1509857554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509857549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ea8dea838a1e646aead2ecd2eaf5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1520981537
 GameObject:
   m_ObjectHideFlags: 0

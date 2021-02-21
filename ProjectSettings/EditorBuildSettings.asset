@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Cutscene/FinalCutscene.unity
     guid: 5d04294126358a343bd3c8bdc44607e3
+  - enabled: 1
+    path: Assets/Scenes/End Roll.unity
+    guid: 1be95f432eaac7e41aa79c2c710fc775
   m_configObjects: {}
