@@ -5,7 +5,7 @@ using TMPro;
 
 public class TextController : MonoBehaviour
 {
-    const int b = 53;
+    const int active = 219;
     const float timeToFade = 0.1f;
 
     [SerializeField] TMP_Text text;
@@ -13,27 +13,38 @@ public class TextController : MonoBehaviour
     public int curIndex = 0;
     public int fadeIndex = -1;
     public float timer = timeToFade;
-    public int curFade = b;
+    public int curFade = active;
+
+    const int inactive = 20;
+
+    private bool initialized = false;
 
     // Start is called before the first frame update
-    void Awake()
+    public void Awake()
     {
         if (TextController.Instance == null) {
             TextController.Instance = this;
         }
     }
 
-    void Update() {
+    public void Update() {
+        if (Time.timeSinceLevelLoad > 0.1 && !initialized) {
+            for (int i = 0; i < text.textInfo.characterInfo.Length; i++) {
+                SetColor(i, new Color32(inactive, inactive, inactive, 255));
+            }
+            initialized = true;
+        }
+
         timer -= Time.deltaTime;
         if (timer < 0) {
             timer = timeToFade;
 
             if (fadeIndex >= 0) {
                 Debug.Log(curFade);
-                curFade++;
-                if (curFade == 255) {
-                    dec();
-                    curFade = b;
+                curFade--;
+                if (curFade == inactive) {
+                    Dec();
+                    curFade = active;
                 } else {
                     SetColor(fadeIndex, new Color32((byte) curFade,(byte) curFade,(byte) curFade,255));
                 }
@@ -43,37 +54,33 @@ public class TextController : MonoBehaviour
 
     public void ClickLetter(string letter) {
         if (letter[0] == text.textInfo.characterInfo[curIndex].character) {
-            SetColor(curIndex, new Color32(b, b, b, 255));
-            inc();
+            SetColor(curIndex, new Color32(active, active, active, 255));
+            Inc();
         }
         else {
-            dec();
+            Dec();
         }
-
-        
     }
 
-    public void inc() {
-        SetColor(fadeIndex, new Color32(b, b, b, 255));
-        curFade = b;
+    public void Inc() {
+        SetColor(fadeIndex, new Color32(active, active, active, 255));
+        curFade = active;
         fadeIndex = curIndex;
         curIndex++;
         if (text.textInfo.characterInfo[curIndex].character == ' ') {
             curIndex++;
         }
-        Debug.Log("Inc");
     }
 
-    public void dec() {
-        if (fadeIndex > -2) {
+    public void Dec() {
+        SetColor(fadeIndex, new Color32(inactive, inactive, inactive, 255));
+        if (fadeIndex > -1) {
             curIndex = fadeIndex;
             fadeIndex--;
             if (fadeIndex > -1 && text.textInfo.characterInfo[fadeIndex].character == ' ') {
                 fadeIndex--;
             }
         }
-
-        Debug.Log("DEc");
     }
 
     public void SetColor(int index, Color32 color) {
@@ -83,8 +90,9 @@ public class TextController : MonoBehaviour
 
         int meshIndex = text.textInfo.characterInfo[index].materialReferenceIndex;
         int vertexIndex = text.textInfo.characterInfo[index].vertexIndex;
-    
+
         Color32[] vertexColors = text.textInfo.meshInfo[meshIndex].colors32;
+
         vertexColors[vertexIndex + 0] = color;
         vertexColors[vertexIndex + 1] = color;
         vertexColors[vertexIndex + 2] = color;

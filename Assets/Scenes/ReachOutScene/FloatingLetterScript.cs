@@ -26,7 +26,6 @@ public class FloatingLetterScript : MonoBehaviour
         'h',
         't',
         's',
-        '.'
     };
 
     public float ttl;
